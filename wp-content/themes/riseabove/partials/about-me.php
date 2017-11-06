@@ -10,7 +10,7 @@
 							<h1><?php echo single_post_title(); ?></h1>
 						</div>
 						<div id="rev-2" class="block-revealer">
-							<p>
+							<p class="shout">
 								In my spare time, I like reading graphic novels, browsing sites like awwwards, codepen and css tricks for inspiration, travelling, playing badmington and indoor hockey. I’m also into skating, playing guitar and destroying people on xbox or pc.
 							</p>
 						</div>
