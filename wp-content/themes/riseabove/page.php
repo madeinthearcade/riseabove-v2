@@ -99,7 +99,7 @@ get_header(); ?>
 					?>
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
-							<h4>My shit blog with a total of <?php echo $total; ?> posts.</h4>
+							<h4>My shit <a href="<?php echo get_home_url(); ?>/journal/">blog</a> with a total of <?php echo $total; ?> posts.</h4>
 						</div>						
 						<ul class="recent-post">
 							<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
@@ -153,23 +153,14 @@ get_header(); ?>
 								</li>
 							<?php endwhile; wp_reset_postdata(); ?>
 						</ul>
-						<div class="col-sm-offset-1 col-sm-10">
-							<a href="<?php echo get_home_url(); ?>/journal/" class="view-all">
-								View all articles <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-							</a>
-						</div>
 					</div>
 					<?php endif; ?>
 				</div>
 
 				<div class="row">
 					<div class="col-sm-offset-1 col-sm-10">
-						<div class="twitter">
-							<h6>Follow me on 
-								<a href="http://twitter.com/madeinthearcade" target="_blank">@madeinthearcade</a>
-							</h6>
-							<div id="twitter"></div>
-						</div>
+						<h4>Posting random shit on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a> since 2009.</h4>
+						<div id="twitter"></div>
 					</div>
 				</div>
 

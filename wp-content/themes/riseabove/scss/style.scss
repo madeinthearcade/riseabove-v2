@@ -1334,19 +1334,19 @@ a.view-post {
 	Twitter
 ======================================================= */
 
-.twitter {
+#twitter {
 	position:relative;
-	&:before {
-		content:'\f099';
-		font-family:'FontAwesome';
-		color:$highlight;
-		position:absolute;
-		top:0;
-		left:0;
-		display:none;
-		line-height:1;
-		@include rem('font-size', 70px);
-	}
+	// &:before {
+	// 	content:'\f099';
+	// 	font-family:'FontAwesome';
+	// 	color:$highlight;
+	// 	position:absolute;
+	// 	top:0;
+	// 	left:0;
+	// 	display:none;
+	// 	line-height:1;
+	// 	@include rem('font-size', 70px);
+	// }
 	ul {
 		list-style:none;
 		margin-left:0;
@@ -1371,12 +1371,9 @@ a.view-post {
 		}
 	}
 	@media (min-width:1200px) {
-		padding-left:remify(100px);
+		// padding-left:remify(100px);
 		&:before {
 			display:block;
-		}
-		ul li {
-			padding-right:calc(100px + 15px);
 		}
 	}
 }
