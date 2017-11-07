@@ -348,6 +348,7 @@ body {
 	position:relative;
 	background:$primary;
 	@include rem('font-size', 18px);
+	font-size:calc(18px + 0.5vw);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -1161,16 +1162,16 @@ header {
 	Journal Archive
 ======================================================= */
 
-.journal-banner {
-	padding:remify(80px 0);
-	@media (min-width:992px) {
-		padding:remify(0 0 100px 0);
-	}
-	@media (min-width:1200px) {
-		padding:0;
-		margin:remify(0 0 100px);
-	}
-}
+// .journal-banner {
+// 	padding:remify(80px 0);
+// 	@media (min-width:992px) {
+// 		padding:remify(0 0 100px 0);
+// 	}
+// 	@media (min-width:1200px) {
+// 		padding:0;
+// 		margin:remify(0 0 100px);
+// 	}
+// }
 
 .category-list {
 	display:block;
