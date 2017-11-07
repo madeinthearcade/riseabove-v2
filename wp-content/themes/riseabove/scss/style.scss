@@ -5,7 +5,6 @@
 @import 'partials/functions';
 @import 'partials/animate';
 @import 'partials/remify';
-@import 'partials/animsition';
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 
@@ -13,11 +12,6 @@
 /* =======================================================
 	Preloader
 ======================================================= */
-
-.animsition-overlay-slide {
-	z-index:21;
-}
-
 
 /* =======================================================
 	Colors
@@ -90,17 +84,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { 
 	@include rem('font-size', 60px);
 	font-size:calc(60px + 2vw);
-	// @media (min-width:768px) {
-	// 	@include rem('font-size', 75px);
-	// 	font-size:calc(100% + 5vw);
-	// }
-	// @media (min-width:992px) {
-	// 	font-size:calc(100% + 5vw);
-	// }
-	// @media (min-width:1200px) {
-	// 	@include rem('font-size', 100px);
-	// 	font-size:calc(100% + 5vw);
-	// }
 }
 
 h2 {
@@ -181,6 +164,17 @@ a {
 	&:hover {
 		color:$secondary;
 		text-decoration:none;
+	}
+	&.btn {
+		border:5px solid $highlight;
+		border-radius:0;
+		padding:remify(15px 25px);
+		font-weight:$heavyWeight;
+		@include rem('font-size', 18px);
+		&:hover {
+			background:$highlight;
+			color:$secondary;
+		}
 	}
 }
 
@@ -319,11 +313,12 @@ small {
 .the-challenge,
 .the-solution,
 .the-result,
-.category-list {
+.category-list,
+.twitter {
 	position:relative;
 	margin-bottom:remify(50px);
 	@media (min-width:992px) {
-		margin-bottom:remify(100px);
+		margin-bottom:remify(80px);
 	}
 }
 
@@ -714,29 +709,15 @@ header {
 	}
 }
 
-// .home .fullwidth-banner {
-// 	padding:remify(80px 0);
-// 	margin-bottom:0;
-// 	height:auto;
-// 	overflow:hidden;
-// 	&:before,
-// 	&:after {
-// 		display:none;
-// 	}
-// 	@media (min-width:768px) {
-// 		padding:remify(150px 0);
-// 	}
-// 	@media (min-width:992px) {
-// 		margin:0;
-// 	}
-// }
-
 .fullwidth-banner {
 	padding:remify(80px 0);
 	margin-bottom:0;
 	height:auto;
 	overflow:hidden;
 	position:relative;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
 	&:before,
 	&:after {
 		display:none;
@@ -746,9 +727,6 @@ header {
 	}
 	@media (min-width:768px) {
 		padding:remify(150px 0);
-	}
-	@media (min-width:992px) {
-		margin:0;
 	}
 }
 
@@ -825,6 +803,7 @@ header {
 			color:#444;
 			position:relative;
 			left:-50px;
+			@include rem('font-size', 16px);
 			@include transition(.35s);
 			i {
 				margin-left:remify(10px);
@@ -1055,56 +1034,6 @@ header {
 	Case Study Page
 ======================================================= */
 
-// .fullwidth-banner {
-// 	display:block;
-// 	position:relative;
-// 	padding:remify(0 15px);
-// 	margin-bottom:remify(50px);
-// 	background-size:cover;
-// 	background-repeat:no-repeat;
-// 	background-position:center center;
-// 	height:400px;
-// 	&:after {
-// 		content:'';
-// 		background-color: rgba(30,157,219,0); 
-// 		background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); 
-// 		background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); 
-// 		background-image: -o-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); 
-// 		background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); 
-// 		background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
-// 		position:absolute;
-// 		left:0;
-// 		bottom:0;
-// 		width:100%;
-// 		height:50%;
-// 	}
-// 	.featured-article {
-// 		position:absolute;
-// 		z-index:1;
-// 		color:#fff;
-// 		bottom:50px;
-// 		padding:remify(0 15px);
-// 		h2,
-// 		h2 a {
-// 			color:#fff;
-// 			margin-bottom:0;
-// 		}
-// 	}
-// 	@media (min-width:992px) {
-// 		padding:remify(0 30px);
-// 		margin:remify(-127px -30px 80px -30px);
-// 	}
-// 	@media (min-width:1200px) {
-// 		padding:remify(0 125px);
-// 		margin:remify(-185px -125px 80px -125px);
-// 		height:100%;
-// 		background-attachment:fixed;
-// 		&.half {
-// 			height:80%;
-// 		}
-// 	}
-// }
-
 #client-stats {
 	display:block;
 	.stats {
@@ -1161,17 +1090,6 @@ header {
 /* =======================================================
 	Journal Archive
 ======================================================= */
-
-// .journal-banner {
-// 	padding:remify(80px 0);
-// 	@media (min-width:992px) {
-// 		padding:remify(0 0 100px 0);
-// 	}
-// 	@media (min-width:1200px) {
-// 		padding:0;
-// 		margin:remify(0 0 100px);
-// 	}
-// }
 
 .category-list {
 	display:block;
@@ -1244,6 +1162,12 @@ a.view-post {
 	h5 small {
 		color:#fff;
 		@include rem('font-size', 16px);
+	}
+}
+.blog-post-content {
+	padding:remify(50px 0);
+	@media (min-width:992px) {
+		padding:remify(80px 0);
 	}
 }
 
@@ -1359,17 +1283,6 @@ a.view-post {
 
 #twitter {
 	position:relative;
-	// &:before {
-	// 	content:'\f099';
-	// 	font-family:'FontAwesome';
-	// 	color:$highlight;
-	// 	position:absolute;
-	// 	top:0;
-	// 	left:0;
-	// 	display:none;
-	// 	line-height:1;
-	// 	@include rem('font-size', 70px);
-	// }
 	ul {
 		list-style:none;
 		margin-left:0;
@@ -1394,7 +1307,6 @@ a.view-post {
 		}
 	}
 	@media (min-width:1200px) {
-		// padding-left:remify(100px);
 		&:before {
 			display:block;
 		}

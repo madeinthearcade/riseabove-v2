@@ -245,7 +245,7 @@ k.getValue=K;k.path=function(a){a=f.str(a)?F(a)[0]:a;return{path:a,value:a.getTo
 
 	$(function () {
 
-		if (Modernizr.mq('only screen and (min-width: 1200px)')) {
+		if (Modernizr.mq('only screen and (min-width: 992px)')) {
 
 			//************************ Reveal on load ********************************
 			
@@ -272,54 +272,54 @@ k.getValue=K;k.path=function(a){a=f.str(a)?F(a)[0]:a;return{path:a,value:a.getTo
 
 			//************************ Reveal on scroll ********************************
 
-			var scrollElemToWatch_1 = document.getElementById('reveal-1'),
-			watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -400),
-			rev1 = new RevealFx(scrollElemToWatch_1, {
-				revealSettings : {
-					bgcolor: '#FBC02D',
-					direction: 'bt',
-					onCover: function(contentEl, revealerEl) {
-						contentEl.style.opacity = 1;
-					}
-				}
-			}),
-			rev2 = new RevealFx(document.querySelector('#reveal-2'), {
-				revealSettings : {
-					bgcolor: '#FBC02D',
-					direction: 'lr',
-					delay: 250,
-					onCover: function(contentEl, revealerEl) {
-						contentEl.style.opacity = 1;
-					}
-				}
-			}),
-			rev3 = new RevealFx(document.querySelector('#reveal-3'), {
-				revealSettings : {
-					bgcolor: '#FBC02D',
-					direction: 'tb',
-					delay: 500,
-					onCover: function(contentEl, revealerEl) {
-						contentEl.style.opacity = 1;
-					}
-				}
-			}),
-			rev4 = new RevealFx(document.querySelector('#reveal-4'), {
-				revealSettings : {
-					bgcolor: '#FBC02D',
-					direction: 'rl',
-					delay: 750,
-					onCover: function(contentEl, revealerEl) {
-						contentEl.style.opacity = 1;
-					}
-				}
-			});
-			watcher_1.enterViewport(function() {
-				rev1.reveal();
-				rev2.reveal();
-				rev3.reveal();
-				rev4.reveal();
-				watcher_1.destroy();
-			});
+			// var scrollElemToWatch_1 = document.getElementById('reveal-1'),
+			// watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -400),
+			// rev1 = new RevealFx(scrollElemToWatch_1, {
+			// 	revealSettings : {
+			// 		bgcolor: '#FBC02D',
+			// 		direction: 'bt',
+			// 		onCover: function(contentEl, revealerEl) {
+			// 			contentEl.style.opacity = 1;
+			// 		}
+			// 	}
+			// }),
+			// rev2 = new RevealFx(document.querySelector('#reveal-2'), {
+			// 	revealSettings : {
+			// 		bgcolor: '#FBC02D',
+			// 		direction: 'lr',
+			// 		delay: 250,
+			// 		onCover: function(contentEl, revealerEl) {
+			// 			contentEl.style.opacity = 1;
+			// 		}
+			// 	}
+			// }),
+			// rev3 = new RevealFx(document.querySelector('#reveal-3'), {
+			// 	revealSettings : {
+			// 		bgcolor: '#FBC02D',
+			// 		direction: 'tb',
+			// 		delay: 500,
+			// 		onCover: function(contentEl, revealerEl) {
+			// 			contentEl.style.opacity = 1;
+			// 		}
+			// 	}
+			// }),
+			// rev4 = new RevealFx(document.querySelector('#reveal-4'), {
+			// 	revealSettings : {
+			// 		bgcolor: '#FBC02D',
+			// 		direction: 'rl',
+			// 		delay: 750,
+			// 		onCover: function(contentEl, revealerEl) {
+			// 			contentEl.style.opacity = 1;
+			// 		}
+			// 	}
+			// });
+			// watcher_1.enterViewport(function() {
+			// 	rev1.reveal();
+			// 	rev2.reveal();
+			// 	rev3.reveal();
+			// 	rev4.reveal();
+			// 	watcher_1.destroy();
+			// });
 
 		}
 

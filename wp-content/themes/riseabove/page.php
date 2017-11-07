@@ -130,13 +130,14 @@ get_header(); ?>
 					<?php endif; ?>
 				</div>
 
-				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10">
-						<h4>Posting random shit on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a> since 2009.</h4>
-						<div id="twitter"></div>
+				<div class="twitter">
+					<div class="row">
+						<div class="col-sm-offset-1 col-sm-10">
+							<h4>Posting shit on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a> since 2009.</h4>
+							<div id="twitter"></div>
+						</div>
 					</div>
 				</div>
-
 			<?php endif; // if is front page ?>
 
 			<?php if ( is_page('About me') ) {

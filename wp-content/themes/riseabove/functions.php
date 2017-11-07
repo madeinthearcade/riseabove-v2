@@ -93,20 +93,17 @@ function html5blank_header_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
         wp_deregister_script('jquery');
-        wp_register_script('jquery', 'https://cdn.jsdelivr.net/combine/npm/jquery@3.2.1/dist/jquery.min.js,npm/jquery-migrate@1.4.1/dist/jquery-migrate.min.js,npm/owl.carousel@2.2.0/dist/owl.carousel.min.js,npm/wowjs@1.1.3/dist/wow.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/fastclick@1.0.6/lib/fastclick.min.js,npm/parallax-js@3.1.0/dist/parallax.min.js', array(), '', true);
+        wp_register_script('jquery', 'https://cdn.jsdelivr.net/combine/npm/jquery@3.2.1/dist/jquery.min.js,npm/jquery-migrate@1.4.1/dist/jquery-migrate.min.js,npm/fastclick@1.0.6/lib/fastclick.min.js,npm/parallax-js@3.1.0/dist/parallax.min.js', array(), '', true);
         wp_enqueue_script('jquery');
-
-    	//wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0', true);
-        //wp_enqueue_script('conditionizr');
-
-        //wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1', true);
-        //wp_enqueue_script('modernizr');
 
         wp_register_script('bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), '3.3.7', true);
         wp_enqueue_script('bootstrapjs');
 
         wp_register_script('typekit', 'https://use.typekit.net/cgk8rib.js', array(), '', true);
         wp_enqueue_script('typekit');
+
+        wp_register_script('revealer', get_template_directory_uri() . '/js/revealer-min.js', array('jquery'), '1.4.1', true);
+        wp_enqueue_script('revealer');
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('html5blankscripts');
@@ -119,10 +116,6 @@ function html5blank_conditional_scripts()
     if (is_front_page()) {
         wp_register_script('twitter', get_template_directory_uri() . '/js/lib/twitter.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('twitter');
-    }
-    if ( is_front_page() || 'about-me' ) {
-        wp_register_script('revealer', get_template_directory_uri() . '/js/revealer-min.js', array('jquery'), '1.4.1', true);
-        wp_enqueue_script('revealer');
     }
 }
 

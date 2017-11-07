@@ -64,11 +64,11 @@ get_header(); ?>
 								</div>
 								<div class="stats">
 									<?php if ( get_field('live_link') ) {
-										echo '<a class="gradient-btn" target="_blank" href="' . get_field('live_link') . '"><span>View Project</span></a>';
+										echo '<a class="btn" target="_blank" href="' . get_field('live_link') . '"><span>View Project</span></a>';
 									} elseif ( get_field('development_link') ) {
-										echo '<a class="gradient-btn" target="_blank" href="' . get_field('development_link') . '"><span>In Development</span></a>';
+										echo '<a class="btn" target="_blank" href="' . get_field('development_link') . '"><span>In Development</span></a>';
 									} else {
-										echo '<a class="gradient-btn" target="_blank" nohref=""><span>Public beta unavailable</span></a>';
+										echo '<a class="btn" target="_blank" nohref=""><span>Public beta unavailable</span></a>';
 									}
 									?>
 								</div>
@@ -82,39 +82,56 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<?php 
-					$args = array( 'post_type' => 'projects', 'posts_per_page' => 10, 'post__not_in' => array($post->ID) );
-					$the_query = new WP_Query( $args ); 
-					// Show other projects but exclude current from list
-					// Use same styling as blog listings on homepage
-				?>
-				<?php if ( $the_query->have_posts() ) : ?>
-					<div class="blog-section">
-					<div class="row">
-						<div class="col-sm-offset-1 col-sm-10">
-							<ul class="recent-post">
-							<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
-								<li>
-									<h6 class="no-dash">
-										<a href="<?php the_permalink(); ?>">
-										<?php $tags = get_the_tags(); if ( $tags ) : ?>
-											<span>
-											<?php foreach ($tags as $tag ) {
-												echo $tag->name;
-											}; ?>
-											</span>
-										<?php endif; ?>
-										<?php the_title(); ?>
-										</a>
-									</h6>
-								</li>
-							<?php endwhile; ?>
-							</ul>
-						</div>
-					</div>						
-					</div>
+				<hr class="divider">
 
-				<?php endif; ?>
+				<div class="featured-work">
+					<div class="row">
+						<div class="col-xs-12">	
+							<div class="flex-container">
+								<?php 
+								$i = 1;
+								$args = array( 'post_type' => 'projects', 'posts_per_page' => 4, 'post__not_in' => array($post->ID) );
+								$the_query = new WP_Query( $args ); 
+								?>
+								<?php if( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+									<div class="flex-item">
+										<div id="<?php echo 'reveal-' . $i; ?>" class="block-revealer">
+											<div class="ft-work-thumbnail">
+												<a href="<?php the_permalink(); ?>">
+												<?php if ( has_post_thumbnail() ) {
+													the_post_thumbnail('full');
+													};
+												?>
+													<div class="ft-work-caption">
+														<h2>
+														<?php $tags = get_the_tags(); if ( $tags ) : ?>
+															<span>
+																<?php foreach ($tags as $tag ) {
+																	echo $tag->name;
+																}; ?>
+															</span>
+														<?php endif; ?>
+														<?php the_title(); ?>
+														</h2>
+														<strong class="view-case-study">
+															View case study <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+														</strong>
+													</div>
+												</a>
+												<!-- /ft-work-thumbnail -->
+											</div>
+										</div>
+										<!-- /flex-item -->
+									</div>
+								<?php $i++; endwhile; wp_reset_postdata(); endif; ?>
+								<!-- /flex-container -->
+							</div>
+							<!-- /column -->
+						</div>
+						<!-- /featured work row -->
+					</div>
+					<!-- /featured-work -->
+				</div>
 
 			</div>
 		</section>
