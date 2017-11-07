@@ -14,15 +14,16 @@ get_header(); ?>
 					<div class="col-sm-offset-1 col-sm-10">
 						<div class="hero-text">
 							<div id="rev-1" class="block-revealer">
-								<h1><?php echo single_post_title(); ?></h1>
+								<h1><?//php echo single_post_title(); ?>Not really a blog</h1>
 							</div>
 							<div id="rev-2" class="block-revealer">
-								<p class="no-margin-bottom shout">網頁設計師 by day, butt kicking vigilante at night.</p>
+								<p class="no-margin-bottom shout">
+									網頁設計師 by day, butt kicking vigilante at night. I don't post much but when I do, it won't be full blown articles, probably little short snippets. Better off following me on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a>.
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 

@@ -153,9 +153,11 @@ h6 {
 		&:before {
 			display:none;
 		}
-		&:hover {
-			text-decoration:underline;
-		}
+	}
+	small {
+		color:$secondary;
+		line-height:1.5;
+		font-family:$baseFont;
 	}
 	span {
 		color:#6e6e6e;
@@ -174,6 +176,12 @@ ul {
 
 a {
 	color:$highlight;
+	font-weight:$heavyWeight;
+	@include transition(.25s);
+	&:hover {
+		color:$secondary;
+		text-decoration:none;
+	}
 }
 
 a.gradient-btn {
@@ -233,6 +241,11 @@ a.gradient-btn {
 	}
 }
 
+small {
+	display:block;
+	line-height:1.5;
+	color:$secondary;
+}
 
 /* =======================================================
 	Images
@@ -305,7 +318,8 @@ a.gradient-btn {
 .blog-section,
 .the-challenge,
 .the-solution,
-.the-result {
+.the-result,
+.category-list {
 	position:relative;
 	margin-bottom:remify(50px);
 	@media (min-width:992px) {
@@ -1160,7 +1174,9 @@ header {
 
 .category-list {
 	display:block;
-	margin-bottom:remify(30px);
+	h6 {
+		margin-bottom:remify(20px);
+	}
 }
 
 .news-article-listing {
@@ -1293,6 +1309,21 @@ a.view-post {
 			}
 			&:hover strong:before {
 				width:100%;
+			}
+		}
+	}
+	@media (min-width:768px) {
+		display:flex;
+		justify-content:flex-start;
+		align-items:stretch;
+		align-content:flex-start;
+		flex-flow:row wrap;
+		li {
+			width:50%;
+			padding-right:remify(15px);
+			&:nth-child(even) {
+				padding-right:0;
+				padding-left:remify(15px);
 			}
 		}
 	}

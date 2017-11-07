@@ -7,10 +7,14 @@
 	<div class="row">
 		<?php foreach($categories as $category) : setup_postdata($category); ?>
 			<div class="col-sm-6">
-				<h3><a href="<?php echo get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></h3>
-				<p>
-					<?php echo $category->description; ?>
-				</p>
+				<h6>
+					<a href="<?php echo get_category_link($category->term_id); ?>">
+						<?php echo $category->name; ?>
+						<small>
+							<?php echo $category->description; ?>
+						</small>		
+					</a>
+				</h6>
 			</div>
 		<?php endforeach; ?>
 	</div>

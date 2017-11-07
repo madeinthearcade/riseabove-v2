@@ -21,7 +21,7 @@ get_header(); ?>
 							</div>
 							<div id="rev-2" class="block-revealer">
 								<p class="no-margin-bottom shout">
-									With my years of experience in the industry, I create beautifully crafted responsive websites with my distinctive strategic thinking. I like constantly putting concepts and ideas to the test and emphasise values that meet user needs as well as business objectives.
+									I create beautifully crafted responsive websites with my distinctive strategic thinking. I like constantly putting concepts and ideas to the test and emphasise values that meet user needs as well as business objectives. I get shit done.
 								</p>
 							</div>
 						</div>

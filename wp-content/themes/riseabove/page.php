@@ -91,7 +91,7 @@ get_header(); ?>
 					<?php 
 					$total = wp_count_posts() -> publish;
 						$args = array(
-							'posts_per_page' => 1
+							'posts_per_page' => 2
 						);
 						$the_query = new WP_Query( $args );
 						if ( $the_query->have_posts() ) : 
@@ -99,60 +99,33 @@ get_header(); ?>
 					?>
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
-							<h4>My shit <a href="<?php echo get_home_url(); ?>/journal/">blog</a> with a total of <?php echo $total; ?> posts.</h4>
-						</div>						
-						<ul class="recent-post">
-							<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
-								<li class="col-sm-offset-1 col-sm-5">
-									<h6 class="no-dash">
-										<a href="<?php the_permalink(); ?>">
-											<?php $categories = get_the_category(); if ( $categories ) : ?>
-											<?php foreach ($categories as $category ) ; ?>
-											<span>
-												<?php the_time('j F, Y'); ?> ~ <?php echo $category->name; ?>
-											</span>
-											<?php endif; ?>
-											<strong><?php the_title(); ?></strong>
-											<small>
-											<?php if ( has_excerpt( $post->ID ) ) {
-												echo limit_words(get_the_excerpt(), '25') . '...';
-											} 
-											?>
-											</small>
-										</a>
-									</h6>
-								</li>
-							<?php 
-							endwhile; 
-							wp_reset_postdata(); 
-								$secondArgs = array(
-									'posts_per_page' => 1,
-									'offset' => 1
-								);
-								$second_query = new WP_Query( $secondArgs );
-								while ( $second_query-> have_posts() ) : $second_query->the_post();
-							?>
-								<li class="col-sm-5">
-									<h6 class="no-dash">
-										<a href="<?php the_permalink(); ?>">
-											<?php $categories = get_the_category(); if ( $categories ) : ?>
-											<?php foreach ($categories as $category ) ; ?>
-											<span>
-												<?php the_time('j F, Y'); ?> ~ <?php echo $category->name; ?>
-											</span>
-											<?php endif; ?>
-											<strong><?php the_title(); ?></strong>
-											<small>
-											<?php if ( has_excerpt( $post->ID ) ) {
-												echo limit_words(get_the_excerpt(), '25') . '...';
-											} 
-											?>
-											</small>
-										</a>
-									</h6>
-								</li>
-							<?php endwhile; wp_reset_postdata(); ?>
-						</ul>
+							<h4>
+								My shit <a href="<?php echo get_home_url(); ?>/journal/">blog</a> with a total of <?php echo $total; ?> posts.
+							</h4>
+							<ul class="recent-post">
+								<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
+									<li>
+										<h6 class="no-dash">
+											<a href="<?php the_permalink(); ?>">
+												<?php $categories = get_the_category(); if ( $categories ) : ?>
+												<?php foreach ($categories as $category ) ; ?>
+												<span>
+													<?php the_time('j F, Y'); ?> ~ <?php echo $category->name; ?>
+												</span>
+												<?php endif; ?>
+												<strong><?php the_title(); ?></strong>
+												<small>
+												<?php if ( has_excerpt( $post->ID ) ) {
+													echo limit_words(get_the_excerpt(), '25') . '...';
+												} 
+												?>
+												</small>
+											</a>
+										</h6>
+									</li>
+								<?php endwhile; ?>
+							</ul>
+						</div>
 					</div>
 					<?php endif; ?>
 				</div>
