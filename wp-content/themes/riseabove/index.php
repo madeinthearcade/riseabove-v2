@@ -8,10 +8,10 @@ get_header(); ?>
 
 	<!-- <div class="body-wrapper animsition-overlay" data-animsition-overlay="true"> -->
 		<div class="fullwidth-banner">
+			<div class="big-text" data-parallax='{"y" : -160, "from-scroll": 10}'><?php echo single_post_title(); ?></div>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-offset-1 col-sm-10">
-						<div class="big-text" data-parallax='{"y" : -160, "from-scroll": 10}'><?php echo single_post_title(); ?></div>
 						<div class="hero-text">
 							<div id="rev-1" class="block-revealer">
 								<h1><?php echo single_post_title(); ?></h1>

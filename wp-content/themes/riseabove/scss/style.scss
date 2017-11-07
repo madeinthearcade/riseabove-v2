@@ -46,31 +46,15 @@ h1, h2, h3, h4, h5, h6 {
 	color:$secondary;
 	margin:0;
 	line-height:1.5;
+	line-height:calc(1.1em + 0.5vw);
 	a {
-		color:$secondary;
+		color:$highlight;
 		text-decoration:none;
 		position:relative;
 		@include transition(.35s);
-		&:before {
-			content:'';
-			background:$highlight;
-			height:5px;
-			width:100%;
-			position:absolute;
-			left:0;
-			bottom:5px;
-			z-index:-1;
-			@include transition(.35s);
-			@media (min-width:1200px) {
-				height:8px;
-			}
-		}
 		&:hover {
-			color:$highlight;
+			color:$secondary;
 			text-decoration:none;
-		}
-		&:hover:before {
-			width:0;
 		}
 	}
 	span {
@@ -81,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 		padding-left:remify(20px);
 		font-weight:$heavyWeight;
 		text-transform:uppercase;
+		line-height:1.5;
 		@include rem('font-size', 14px);
 		&:before {
 			content:'';
@@ -103,25 +88,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-	@include rem('font-size', 38px);
-	font-size:calc(100% + 5vw);
-	@media (min-width:768px) {
-		@include rem('font-size', 75px);
-		font-size:calc(100% + 5vw);
-	}
-	@media (min-width:992px) {
-		font-size:calc(100% + 5vw);
-	}
-	@media (min-width:1200px) {
-		@include rem('font-size', 100px);
-		font-size:calc(100% + 5vw);
-	}
+	@include rem('font-size', 60px);
+	font-size:calc(60px + 2vw);
+	// @media (min-width:768px) {
+	// 	@include rem('font-size', 75px);
+	// 	font-size:calc(100% + 5vw);
+	// }
+	// @media (min-width:992px) {
+	// 	font-size:calc(100% + 5vw);
+	// }
+	// @media (min-width:1200px) {
+	// 	@include rem('font-size', 100px);
+	// 	font-size:calc(100% + 5vw);
+	// }
 }
 
 h2 {
 	margin-bottom:remify(30px);
-	@include rem('font-size', 36px);
-	font-size:calc(100% + 2vw);
+	@include rem('font-size', 32px);
+	font-size:calc(32px + 1vw);
 	&.discipline-title {
 		line-height:1.2;
 		position:relative;
@@ -141,22 +126,28 @@ h2 {
 	}
 }
 
-h3,
+h3 {
+	margin-bottom:remify(20px);
+	@include rem('font-size', 28px);
+	font-size:calc(28px + 1vw);
+}
+
 h4 {
 	margin-bottom:remify(20px);
 	@include rem('font-size', 24px);
-	font-size:calc(100% + 1.5vw);
+	font-size:calc(24px + 1vw);
 }
 
 h5 {
-	@include rem('font-size', 22px);
-	font-size:calc(100% + 0.5vw);
+	@include rem('font-size', 20px);
+	font-size:calc(20px + 1vw);
 	margin-bottom:remify(30px);
 }
 
 h6 {
 	margin-bottom:0;
-	@include rem('font-size', 20px);
+	@include rem('font-size', 18px);
+	font-size:calc(18px + 1vw);
 	a {
 		color:$highlight;
 		&:before {
@@ -225,10 +216,8 @@ a.gradient-btn {
 	position:relative;
 	font-family:$titleFont;
 	font-weight:$baseWeight;
-	@include rem('font-size', 25px);
-	@media (min-width:768px) {
-		font-size:calc(100% + 0.5vw);
-	}
+	@include rem('font-size', 18px);
+	font-size:calc(18px + 1vw);
 }
 
 .quote {
@@ -732,6 +721,7 @@ header {
 	margin-bottom:0;
 	height:auto;
 	overflow:hidden;
+	position:relative;
 	&:before,
 	&:after {
 		display:none;
@@ -1254,7 +1244,7 @@ a.view-post {
 	li {
 		display:block;
 		background:none!important;
-		h3, h5 {
+		h3, h6 {
 			margin-bottom:0;
 		}
 		a {
@@ -1299,6 +1289,7 @@ a.view-post {
 			}
 			&:hover {
 				color:$secondary;
+				text-decoration:none;
 			}
 			&:hover strong:before {
 				width:100%;
@@ -1350,8 +1341,8 @@ a.view-post {
 	ul {
 		list-style:none;
 		margin-left:0;
-		@include rem('font-size', 22px);
-		font-size: calc(100% + 0.5vw);
+		@include rem('font-size', 18px);
+		font-size: calc(18px + 1vw);
 	}
 	@media (min-width:768px) {
 		ul {

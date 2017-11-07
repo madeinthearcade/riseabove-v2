@@ -1,18 +1,18 @@
 	<!-- <div class="body-wrapper animsition-overlay" data-animsition-overlay="true"> -->
 		<div class="fullwidth-banner">
+			<div class="big-text" data-parallax='{"y" : -160, "from-scroll": 10}'>
+				<?php echo single_post_title(); ?>
+			</div>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-offset-1 col-sm-10">
-						<div class="big-text" data-parallax='{"y" : -160, "from-scroll": 10}'>
-							<?php echo single_post_title(); ?>
-						</div>
 						<div class="hero-text">
 							<div id="rev-1" class="block-revealer">
 								<h1><?php echo single_post_title(); ?></h1>
 							</div>
 							<div id="rev-2" class="block-revealer">
 								<p class="no-margin-bottom shout">
-									In my spare time, I like reading graphic novels, browsing sites like awwwards, codepen and css tricks for inspiration, travelling, playing badmington and indoor hockey. I’m also into skating, playing guitar and destroying people on xbox or pc.
+									I'm a designer who knows how to code. My favourite CMS is Wordpress. Chrome is the best browser. Best moment so far is seeing the sunrise on Bolivia's Salt Flats. Most recent trip was to Japan. Everyone should mario-kart around Tokyo.
 								</p>
 							</div>
 						</div>

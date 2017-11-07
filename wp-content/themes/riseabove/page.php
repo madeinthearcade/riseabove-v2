@@ -30,10 +30,10 @@ get_header(); ?>
 				<div class="about-us">
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
-							<h4>
+							<h3>
 								<span>Currently Developing at Pillory Barn</span>
-								Hey I’m Peter, <a href="<?php echo get_home_url(); ?>/projects/">Web Designer &amp; Front End Developer.</a> I create digital solutions to help shape the web today. <a href="<?php echo get_home_url(); ?>/projects/">View my portfolio.</a>
-							</h4>
+								Hey I’m Peter, <a href="<?php echo get_home_url(); ?>/projects/">Web Designer &amp; Front End Developer.</a> I create digital solutions to help shape the web today. View my <a href="<?php echo get_home_url(); ?>/projects/">portfolio.</a>
+							</h3>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ get_header(); ?>
 						<ul class="recent-post">
 							<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
 								<li class="col-sm-offset-1 col-sm-5">
-									<h5 class="no-dash">
+									<h6 class="no-dash">
 										<a href="<?php the_permalink(); ?>">
 											<?php $categories = get_the_category(); if ( $categories ) : ?>
 											<?php foreach ($categories as $category ) ; ?>
@@ -120,7 +120,7 @@ get_header(); ?>
 											?>
 											</small>
 										</a>
-									</h5>
+									</h6>
 								</li>
 							<?php 
 							endwhile; 
@@ -133,7 +133,7 @@ get_header(); ?>
 								while ( $second_query-> have_posts() ) : $second_query->the_post();
 							?>
 								<li class="col-sm-5">
-									<h5 class="no-dash">
+									<h6 class="no-dash">
 										<a href="<?php the_permalink(); ?>">
 											<?php $categories = get_the_category(); if ( $categories ) : ?>
 											<?php foreach ($categories as $category ) ; ?>
@@ -149,7 +149,7 @@ get_header(); ?>
 											?>
 											</small>
 										</a>
-									</h5>
+									</h6>
 								</li>
 							<?php endwhile; wp_reset_postdata(); ?>
 						</ul>
@@ -163,7 +163,6 @@ get_header(); ?>
 						<div id="twitter"></div>
 					</div>
 				</div>
-
 
 			<?php endif; // if is front page ?>
 
