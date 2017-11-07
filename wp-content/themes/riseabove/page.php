@@ -31,8 +31,8 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
 							<h4>
-								<span>About me</span>
-								Hey I’m Peter, Web Designer &amp; Front End Developer. I create digital solutions to help shape the web today.
+								<span>Currently Developing at Pillory Barn</span>
+								Hey I’m Peter, <a href="<?php echo get_home_url(); ?>/projects/">Web Designer &amp; Front End Developer.</a> I create digital solutions to help shape the web today. <a href="<?php echo get_home_url(); ?>/projects/">View my portfolio.</a>
 							</h4>
 						</div>
 					</div>
@@ -87,27 +87,23 @@ get_header(); ?>
 					<!-- /featured-work -->
 				</div>
 
-				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10">
-						<div class="title-btn">
-							<h4 class="text-center no-dash">
-								<span>Currently developing at Pillory Barn</span>
-								<a href="<?php echo get_home_url(); ?>/projects/">View portfolio</a>
-							</h4>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-5">
-						<?php 
-							$the_query = new WP_Query( 'posts_per_page=3' );
-							if ( $the_query->have_posts() ) : 
-							// New WP query because posts page has been set
-						?>
-							<ul class="recent-post">
+				<div class="blog-section">
+					<?php 
+					$total = wp_count_posts() -> publish;
+						$args = array(
+							'posts_per_page' => 1
+						);
+						$the_query = new WP_Query( $args );
+						if ( $the_query->have_posts() ) : 
+						// New WP query because posts page has been set
+					?>
+					<div class="row">
+						<div class="col-sm-offset-1 col-sm-10">
+							<h4>My shit blog with a total of <?php echo $total; ?> posts.</h4>
+						</div>						
+						<ul class="recent-post">
 							<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
-								<li>
+								<li class="col-sm-offset-1 col-sm-5">
 									<h5 class="no-dash">
 										<a href="<?php the_permalink(); ?>">
 											<?php $categories = get_the_category(); if ( $categories ) : ?>
@@ -126,14 +122,48 @@ get_header(); ?>
 										</a>
 									</h5>
 								</li>
-							<?php endwhile; ?>
-							</ul>
+							<?php 
+							endwhile; 
+							wp_reset_postdata(); 
+								$secondArgs = array(
+									'posts_per_page' => 1,
+									'offset' => 1
+								);
+								$second_query = new WP_Query( $secondArgs );
+								while ( $second_query-> have_posts() ) : $second_query->the_post();
+							?>
+								<li class="col-sm-5">
+									<h5 class="no-dash">
+										<a href="<?php the_permalink(); ?>">
+											<?php $categories = get_the_category(); if ( $categories ) : ?>
+											<?php foreach ($categories as $category ) ; ?>
+											<span>
+												<?php the_time('j F, Y'); ?> ~ <?php echo $category->name; ?>
+											</span>
+											<?php endif; ?>
+											<strong><?php the_title(); ?></strong>
+											<small>
+											<?php if ( has_excerpt( $post->ID ) ) {
+												echo limit_words(get_the_excerpt(), '25') . '...';
+											} 
+											?>
+											</small>
+										</a>
+									</h5>
+								</li>
+							<?php endwhile; wp_reset_postdata(); ?>
+						</ul>
+						<div class="col-sm-offset-1 col-sm-10">
 							<a href="<?php echo get_home_url(); ?>/journal/" class="view-all">
 								View all articles <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 							</a>
-						<?php endif; // End blog section ?>
+						</div>
 					</div>
-					<div class="col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-5">
+					<?php endif; ?>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-offset-1 col-sm-10">
 						<div class="twitter">
 							<h6>Follow me on 
 								<a href="http://twitter.com/madeinthearcade" target="_blank">@madeinthearcade</a>
@@ -142,6 +172,8 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
+
+
 			<?php endif; // if is front page ?>
 
 			<?php if ( is_page('About me') ) {

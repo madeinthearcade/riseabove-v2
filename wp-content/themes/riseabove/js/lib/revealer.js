@@ -286,7 +286,7 @@ k.getValue=K;k.path=function(a){a=f.str(a)?F(a)[0]:a;return{path:a,value:a.getTo
 			rev2 = new RevealFx(document.querySelector('#reveal-2'), {
 				revealSettings : {
 					bgcolor: '#FBC02D',
-					direction: 'tb',
+					direction: 'lr',
 					delay: 250,
 					onCover: function(contentEl, revealerEl) {
 						contentEl.style.opacity = 1;
@@ -296,7 +296,7 @@ k.getValue=K;k.path=function(a){a=f.str(a)?F(a)[0]:a;return{path:a,value:a.getTo
 			rev3 = new RevealFx(document.querySelector('#reveal-3'), {
 				revealSettings : {
 					bgcolor: '#FBC02D',
-					direction: 'bt',
+					direction: 'tb',
 					delay: 500,
 					onCover: function(contentEl, revealerEl) {
 						contentEl.style.opacity = 1;
@@ -306,7 +306,7 @@ k.getValue=K;k.path=function(a){a=f.str(a)?F(a)[0]:a;return{path:a,value:a.getTo
 			rev4 = new RevealFx(document.querySelector('#reveal-4'), {
 				revealSettings : {
 					bgcolor: '#FBC02D',
-					direction: 'tb',
+					direction: 'rl',
 					delay: 750,
 					onCover: function(contentEl, revealerEl) {
 						contentEl.style.opacity = 1;

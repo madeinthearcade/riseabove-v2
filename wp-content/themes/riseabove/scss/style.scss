@@ -155,8 +155,8 @@ h5 {
 }
 
 h6 {
-	margin-bottom:remify(20px);
-	@include rem('font-size', 18px);
+	margin-bottom:0;
+	@include rem('font-size', 20px);
 	a {
 		color:$highlight;
 		&:before {
@@ -224,11 +224,10 @@ a.gradient-btn {
 .shout {
 	position:relative;
 	font-family:$titleFont;
-	line-height:remify(49px);
+	font-weight:$baseWeight;
 	@include rem('font-size', 25px);
 	@media (min-width:768px) {
-		line-height:remify(72px);
-		@include rem('font-size', 48px);
+		font-size:calc(100% + 0.5vw);
 	}
 }
 
@@ -315,7 +314,6 @@ a.gradient-btn {
 .about-block,
 .featured-work,
 .blog-section,
-.twitter,
 .the-challenge,
 .the-solution,
 .the-result {
@@ -324,10 +322,6 @@ a.gradient-btn {
 	@media (min-width:992px) {
 		margin-bottom:remify(100px);
 	}
-}
-
-.featured-work {
-	margin:0;
 }
 
 /* =======================================================
@@ -400,7 +394,7 @@ body {
 .grid-overlay .grid-line {
 	float:left;
 	height:100%;
-	border-left:1px solid #efefef;
+	border-left:1px solid #f7f7f7;
 }
 
 .block-revealer__element {
@@ -612,6 +606,7 @@ header {
 		ul li {
 			display:inline-block;
 			width:20%;
+			margin:remify(5px 0);
 			a {
 				text-transform:uppercase;
 				@include rem('font-size', 16px);
@@ -845,13 +840,10 @@ header {
 	}
 	@media (min-width:992px) {
 		display:flex;
-		justify-content:space-between;
+		justify-content:flex-start;
 		align-items:stretch;
 		align-content:flex-start;
 		flex-flow:row wrap;
-		&.project-list {
-			flex-flow:row wrap;
-		}
 		.ft-work-caption h2,
 		.ft-work-caption h2 span {
 			color:#fff;
@@ -864,7 +856,6 @@ header {
 			display:block;
 		}
 		.flex-item {
-			flex:1 1 auto;
 			width:50%;
 			margin-bottom:remify(30px);
 		}
@@ -926,7 +917,7 @@ header {
 	font-size:calc(100% + 20vw);
 	color:darken($primary, 2%);
 	white-space:nowrap;
-	top:-3%;
+	top:0;
 	left:calc(-50vw + 50%);
 	z-index:-1;
 	line-height:1;
@@ -1259,9 +1250,9 @@ a.view-post {
 	list-style:none;
 	padding:0;
 	margin:0;
+	@extend .clearfix;
 	li {
 		display:block;
-		float:none;
 		background:none!important;
 		h3, h5 {
 			margin-bottom:0;
@@ -1328,7 +1319,6 @@ a.view-post {
 	font-weight:$heavyWeight;
 	color:$secondary;
 	text-transform:uppercase;
-	margin-bottom:remify(60px);
 	@include transition(.35s);
 	i {
 		margin-left:remify(10px);
@@ -1346,28 +1336,47 @@ a.view-post {
 
 .twitter {
 	position:relative;
-	// &:before {
-	// 	content:'\f099';
-	// 	font-family:'FontAwesome';
-	// 	color:$highlight;
-	// 	position:absolute;
-	// 	top:20px;
-	// 	left:0;
-	// 	display:none;
-	// 	line-height:1;
-	// 	@include rem('font-size', 70px);
-	// }
+	&:before {
+		content:'\f099';
+		font-family:'FontAwesome';
+		color:$highlight;
+		position:absolute;
+		top:0;
+		left:0;
+		display:none;
+		line-height:1;
+		@include rem('font-size', 70px);
+	}
 	ul {
 		list-style:none;
 		margin-left:0;
 		@include rem('font-size', 22px);
 		font-size: calc(100% + 0.5vw);
 	}
-	@media (min-width:992px) {
-		padding-top:remify(20px);
-		// padding-left:remify(100px);
+	@media (min-width:768px) {
+		ul {
+			display:flex;
+			justify-content:flex-start;
+			align-items:stretch;
+			align-content:flex-start;
+			flex-flow:row wrap;
+			li {
+				width:50%;
+				padding-right:remify(15px);
+				&:nth-child(even) {
+					padding-right:0;
+					padding-left:remify(15px);
+				}
+			}
+		}
+	}
+	@media (min-width:1200px) {
+		padding-left:remify(100px);
 		&:before {
 			display:block;
+		}
+		ul li {
+			padding-right:calc(100px + 15px);
 		}
 	}
 }
@@ -1400,11 +1409,14 @@ a.view-post {
 footer {
 	display:block;
 	position:relative;
+	padding:remify(30px 0);
+	background:#fff;
+	border-top:1px solid #f7f7f7;
 }
 
 .copyright {
-	padding:remify(30px 0);
 	font-family:$baseFont;
 	color:$secondary;
-	@include rem('font-size', 12px);
+	display:inline-block;
+	@include rem('font-size', 14px);
 }

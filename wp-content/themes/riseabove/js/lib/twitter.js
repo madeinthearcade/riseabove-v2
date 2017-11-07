@@ -65,7 +65,7 @@ handleTweets(arrayTweets);inProgress=false;if(queue.length>0){twitterFetcher.fet
 var configProfile = {
   "profile": {"screenName": 'madeinthearcade'},
   "domId": 'twitter',
-  "maxTweets": 4,
+  "maxTweets": 2,
   "enableLinks": true,
   "showUser": false,
   "showTime": true,

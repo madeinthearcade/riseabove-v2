@@ -4,7 +4,7 @@
 	// Register Projects CPT, limit posts for 2nd loop with offset
 ?>
 <?php if ( $the_query->have_posts() ) : ?>
-<div class="flex-container project-list">
+<div class="flex-container">
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<div class="flex-item">
 			<div class="ft-work-thumbnail">
