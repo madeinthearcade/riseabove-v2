@@ -18,7 +18,7 @@ get_header(); ?>
 							</div>
 							<div id="rev-2" class="block-revealer">
 								<p class="no-margin-bottom shout">
-									I don't post much but when I do, they'll probably little short snippets. Better off following me on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a>.
+									I don't post much but when I do, they'll probably be little short stories. Better off following me on <a href="http://twitter.com/madeinthearcade" target="_blank">Twitter</a>.
 								</p>
 							</div>
 						</div>
