@@ -223,6 +223,13 @@ $(document).ready(function(){
 		$( this ).toggleClass("open");
 	});
 
+    $('.image-popup').magnificPopup({
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+    });
+
 	// $("a[href^='#']").click(function(event){
 	// 	$('html, body').animate({
 	// 		scrollTop: $( $.attr(this, 'href') ).offset().top - 135

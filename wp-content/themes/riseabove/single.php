@@ -41,6 +41,19 @@ $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->id), 
 					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>">
 							<?php the_content(); ?>
+							<?php 
+							$images = get_field('image_gallery');
+							if( $images ): ?>
+							<ul class="image-gallery">
+								<?php foreach( $images as $image ): ?>
+									<li>
+										<a href="<?php echo $image['url']; ?>" class="image-popup">
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="normal" />
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php endif; ?>
 						</article>
 					<?php endwhile; else: ?>
 					<article>
