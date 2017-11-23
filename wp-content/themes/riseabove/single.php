@@ -68,6 +68,10 @@ $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->id), 
 							<?php next_post_link(); ?>
 						</div>
 					</div>
+					<!-- <div class="comments">
+						<?//php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?>
+						<?//php comments_template(); ?>
+					</div> -->
 				</div>
 			</div>
 		</div>
