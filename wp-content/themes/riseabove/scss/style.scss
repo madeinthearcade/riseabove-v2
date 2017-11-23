@@ -1182,8 +1182,34 @@ a.view-post {
 	}
 }
 
-.pagination a {
-	color:$secondary;
+.pagination {
+	font-weight:$heavyWeight;
+	a {
+		color:$secondary;
+		&:hover {
+			color:$primary;
+		}
+	}
+}
+
+.post-pagination {
+	display:block;
+	@extend .clearfix;
+	.previous-post,
+	.next-post {
+		display:block;
+	}
+	@media (min-width:768px) {
+		.previous-post,
+		.next-post {
+			width:50%;
+			float:left;
+		}
+		.next-post {
+			float:right;
+			text-align:right;
+		}
+	}
 }
 
 /* =======================================================

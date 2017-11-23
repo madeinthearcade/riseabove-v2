@@ -60,6 +60,14 @@ $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->id), 
 						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 					</article>
 				<?php endif; ?>
+					<div class="post-pagination">
+						<div class="previous-post">
+							<?php previous_post_link(); ?>
+						</div>
+						<div class="next-post">
+							<?php next_post_link(); ?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
