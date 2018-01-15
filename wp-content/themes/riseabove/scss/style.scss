@@ -7,7 +7,7 @@
 @import 'partials/remify';
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
-
+@import url(https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css);
 
 /* =======================================================
 	Preloader
@@ -154,7 +154,7 @@ p {
 
 ul {
 	padding:0;
-	margin-left:remify(20px);
+	margin-left:remify(30px);
 }
 
 a {
@@ -254,6 +254,44 @@ small {
 		width:100%;
 		height:auto;
 		margin:0;
+	}
+}
+
+.image-gallery {
+	display:block;
+	list-style:none;
+	padding:0;
+	margin:0;
+	li {
+		display:block;
+		margin:remify(0 0 20px 0);
+		a {
+			display:block;
+			img {
+				width:100%;
+				height:auto;
+			}
+		}
+	}
+	@media (min-width:992px) {
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		justify-content:flex-start;
+		margin:remify(0 -15px);
+		li {
+			width:25%;
+			height:350px;
+			padding:remify(0 15px);
+			a {
+				height:100%;
+				img {
+					width:100%;
+					height:100%;
+					object-fit:cover;
+				}
+			}
+		}
 	}
 }
 
@@ -1144,8 +1182,34 @@ a.view-post {
 	}
 }
 
-.pagination a {
-	color:$secondary;
+.pagination {
+	font-weight:$heavyWeight;
+	a {
+		color:$secondary;
+		&:hover {
+			color:$primary;
+		}
+	}
+}
+
+.post-pagination {
+	display:block;
+	@extend .clearfix;
+	.previous-post,
+	.next-post {
+		display:block;
+	}
+	@media (min-width:768px) {
+		.previous-post,
+		.next-post {
+			width:50%;
+			float:left;
+		}
+		.next-post {
+			float:right;
+			text-align:right;
+		}
+	}
 }
 
 /* =======================================================

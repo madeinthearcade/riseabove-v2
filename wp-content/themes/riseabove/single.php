@@ -41,12 +41,37 @@ $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->id), 
 					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>">
 							<?php the_content(); ?>
+							<?php 
+							$images = get_field('image_gallery');
+							if( $images ): ?>
+							<ul class="image-gallery">
+								<?php foreach( $images as $image ): ?>
+									<li>
+										<a href="<?php echo $image['url']; ?>" class="image-popup">
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="normal" />
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php endif; ?>
 						</article>
 					<?php endwhile; else: ?>
 					<article>
 						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 					</article>
 				<?php endif; ?>
+					<div class="post-pagination">
+						<div class="previous-post">
+							<?php previous_post_link(); ?>
+						</div>
+						<div class="next-post">
+							<?php next_post_link(); ?>
+						</div>
+					</div>
+					<!-- <div class="comments">
+						<?//php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?>
+						<?//php comments_template(); ?>
+					</div> -->
 				</div>
 			</div>
 		</div>

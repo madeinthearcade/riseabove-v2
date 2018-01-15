@@ -9,7 +9,7 @@
 			<div class="col-sm-6">
 				<h6>
 					<a href="<?php echo get_category_link($category->term_id); ?>">
-						<?php echo $category->name; ?>
+						<?php echo 'View Posts In ' . $category->name; ?>
 						<small>
 							<?php echo $category->description; ?>
 						</small>		
