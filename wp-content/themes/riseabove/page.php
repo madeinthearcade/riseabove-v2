@@ -100,7 +100,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
 							<h4>
-								My attempted <a href="<?php echo get_home_url(); ?>/journal/">blog</a> with a total of <?php echo $total; ?> posts.
+								My <a href="<?php echo get_home_url(); ?>/journal/">blog</a> with a total of <?php echo $total; ?> posts.
 							</h4>
 							<ul class="recent-post">
 								<?php while ( $the_query->have_posts () ) : $the_query->the_post(); ?>
