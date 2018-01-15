@@ -609,7 +609,9 @@ header {
 				font-family:$baseFont;
 				font-weight:$heavyWeight;
 				position:relative;
-				@include rem('font-size', 25px);
+				text-transform:uppercase;
+				letter-spacing:1px;
+				@include rem('font-size', 18px);
 				@include transition(.35s);
 				&:before {
 					content:'\f105';
