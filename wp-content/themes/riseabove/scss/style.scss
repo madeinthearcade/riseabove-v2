@@ -1393,8 +1393,10 @@ a.view-post {
 }
 
 .timePosted {
-	font-size:65%;
-	margin-bottom:remify(30px);
+	color:$secondary;
+	text-transform:uppercase;
+	@include rem('font-size', 12px);
+	margin-bottom:0;
 }
 
 .interact {
