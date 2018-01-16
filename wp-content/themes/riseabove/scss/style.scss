@@ -1364,7 +1364,7 @@ a.view-post {
 			align-content:flex-start;
 			flex-flow:row wrap;
 			li {
-				width:50%;
+				width:100%;
 				padding-right:remify(15px);
 				&:nth-child(even) {
 					padding-right:0;
