@@ -33,7 +33,7 @@
 								<li>
 									<h5 class="no-dash">Developer at Pillory Barn<span>August 2016 - Ongoing</span></h5>
 									<p>
-										Developer for a Kent based marketing agency, building websites and responsive emails.
+										Midweight Developer for a Kent based marketing agency, building websites and responsive emails.
 									</p>
 								</li>
 								<li>
