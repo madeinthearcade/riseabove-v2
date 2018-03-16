@@ -31,7 +31,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-sm-offset-1 col-sm-10">
 							<h3>
-								<span>Currently Developing at Pillory Barn</span>
+								<span>Starting a new adventure</span>
 								Hey I’m Peter, <a href="<?php echo get_home_url(); ?>/projects/">Web Designer &amp; Front End Developer.</a> I create digital solutions to help shape the web today. View my <a href="<?php echo get_home_url(); ?>/projects/">portfolio.</a>
 							</h3>
 						</div>

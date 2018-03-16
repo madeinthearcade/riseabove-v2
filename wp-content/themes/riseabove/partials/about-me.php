@@ -31,7 +31,7 @@
 						<div class="col-sm-offset-1 col-sm-7">
 							<ul>
 								<li>
-									<h5 class="no-dash">Developer at Pillory Barn<span>August 2016 - Ongoing</span></h5>
+									<h5 class="no-dash">Developer at Pillory Barn<span>August 2016 - March 2018</span></h5>
 									<p>
 										Midweight Developer for a Kent based marketing agency, building websites and responsive emails.
 									</p>
